@@ -1,0 +1,197 @@
+body.index{
+	background-image:url('images/background.jpg');
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-attachment: fixed;
+
+}
+h1{
+	margin-top: 30px;
+}
+h3{
+	padding-bottom: 10px;
+	margin-left: 28px;
+	font-family: Comic Sans MS;
+	color: red;
+}
+.contenthome{
+	margin-bottom: 5px;
+}
+.contentindex{
+	position: fixed;
+	margin-bottom: 5px;
+}
+body.home{
+	background-color: #e9eaed;
+}
+.boodschap{
+	float: left;
+	display: block;
+	border: 1px solid black;
+	width: 500px;
+	height: 500px;
+	margin-left: 50px;
+	background-color:rgba(204,209,156,0.3);
+}
+.boodschap img{
+	display: block;
+	margin: auto;
+	margin-top: 50px;
+}
+.registratie{
+	float: right;
+	display: block;
+	border: 1px solid black;
+	width: 600px;
+	height: 500px;
+	margin-left: 150px;
+	background-color:rgba(204,209,156,0.3);
+}
+img.logo{
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	left: 20px;
+	top: 5px;
+}
+img.friends{
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	left: 750px;
+	top: 5px;
+}
+.headerhome {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: auto;
+    background-image:url('images/header-kaal.png');
+	height: 40px;
+	right: 0px;
+}
+.outerhome {
+    position: relative;
+    height: 100px;
+}
+.outerhome .headerhome {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    top: auto;
+}
+.headerindex {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: auto;
+    background-image:url('images/header-kaal.png');
+	height: 40px;
+	right: 0px;
+}
+.outerindex {
+    position: relative;
+    height: 100px;
+}
+.outerindex .headerindex {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    top: auto;
+}
+img.naam{
+	position: fixed;
+	left: 20px;
+	top: -5px;
+}
+label.naam{
+	position: fixed;
+	top: 5px;
+	right: 640px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: white;
+}
+input.naam{
+	position: fixed;
+	top: 7px;
+	right: 450px;
+	background-color: #e9eaed;
+}
+label.wachtwoord{
+	position: fixed;
+	top: 5px;
+	right: 340px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: white;
+}
+input.wachtwoord{
+	position: fixed;
+	top: 7px;
+	right: 150px;
+	background-color: #e9eaed;
+}
+input.aanmelden{
+	position: fixed;
+	top: 7px;
+	right: 40px;
+	font-size: 12px;
+	font-family: Comic Sans MS;
+}
+label.naamreg{
+	position: fixed;
+	top: 250px;
+	right: 585px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.naamreg{
+	position: fixed;
+	top: 250px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.wwreg{
+	position: fixed;
+	top: 300px;
+	right: 535px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.wwreg{
+	position: fixed;
+	top: 300px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.regrep{
+	position: fixed;
+	top: 350px;
+	right: 465px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.regrep{
+	position: fixed;
+	top: 350px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+input.register{
+	position: fixed;
+	top: 400px;
+	right: 295px;
+	font-size: 12px;
+	font-family: Comic Sans MS;
+}
+.registratie h2{
+	margin-left: 30px;
+	font-size: 20px;
+	font-family: Comic Sans MS;
+	color: #025013;
+	margin-top: 50px;
+}
