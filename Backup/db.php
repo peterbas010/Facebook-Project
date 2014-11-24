@@ -54,10 +54,7 @@
 	{
 		global $db;
 
-		$result = $db->prepare("SELECT * FROM gebruiker 
-			WHERE email= :email 
-			AND password= :password
-			AND status=0");
+		$result = $db->prepare("SELECT * FROM gebruiker WHERE email= :email AND password= :password");
 		$result->bindParam(':email', $email, PDO::PARAM_STR);
 		$result->bindParam(':password', $password, PDO::PARAM_STR);
 		$result->execute();
@@ -79,43 +76,15 @@
 	function getWall()
 	{
 		global $db;
-		$sql = "SELECT post.id as postid, gebruiker.id as gebruikerid, post.datum as postdatum, titel, post.content as postcontent, persoon.voornaam as postvoornaam, persoon.achternaam as postachternaam, persoon.id as persoonidpost, gebruiker.persoon_id, gebruiker.email FROM post
-				INNER JOIN gebruiker on
+		$sql = "SELECT post.id as postid, gebruiker.id as gebruikerid, titel, content, voornaam, achternaam, datum, persoon.id, gebruiker.persoon_id, email FROM post
+				LEFT JOIN gebruiker on
 				post.gebruiker_id=gebruiker.persoon_id
-				INNER JOIN persoon on
+				LEFT JOIN persoon on
 				gebruiker.persoon_id=persoon.id
 				WHERE post.status =0
-				ORDER BY post.datum DESC";
+				ORDER BY datum DESC";
+		$result = $db->prepare($sql);
 		$result = $db->query($sql);
-		$result->execute();
-
-		return $result;
-	}
-
-	function getComment($postid)
-	{
-		global $db;
-		$sql = "SELECT comment.id as commentid, voornaam, achternaam, comment.datum as commentdatum, gebruiker.id as gebruikerid, comment.gebruiker_id as commentgebruikerid, persoon.id as persoonid, gebruiker.persoon_id as gebruikerpersoonid, datum, content, comment.status FROM comment
-				LEFT JOIN gebruiker on
-				gebruiker.id=comment.gebruiker_id
-				LEFT JOIN persoon on
-				persoon.id=gebruiker.persoon_id
-				WHERE comment.post_id ='$postid'
-				AND comment.status =0";
-		$result = $db->query($sql);
-		$result->execute();
-		return $result;
-	}
-
-	function getUser()
-	{
-		global $db;
-		$sql = "SELECT * FROM gebruiker
-		INNER JOIN persoon on
-		gebruiker.persoon_id = persoon.id";
-		$result = $db->query($sql);
-		$result->execute();
-
 		return $result;
 	}
 
@@ -151,7 +120,6 @@
 				gebruiker.persoon_id = persoon.id
 				where gebruiker.id = '$_SESSION[user]'";
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 	}
 	function editUser($persoonid, $voornaam, $achternaam, $geboortedatum, $adres, $postcode, $woonplaats, $telefoon, $mobiel)
@@ -184,7 +152,6 @@
 				persoon.id=gebruiker.persoon_id 
 				where gebruiker.id = '$_SESSION[user]'";
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 	}
 	function deletePost($postid)
@@ -198,56 +165,44 @@
 		$stmt->execute();
 		return $stmt;
 	}
-	function deleteUser($userid)
-	{
-		global $db;
-		$sql = "UPDATE gebruiker
-		SET status='1'
-		WHERE gebruiker.id = '$userid' ";
-		$stmt = $db->prepare($sql);
-		$stmt = $db->query($sql);
-		$stmt->execute();
-		return $stmt;
-	}
 	function getWallProfile($email)
 	{
 		global $db;
 		$sql = "SELECT post.id as postid, gebruiker.id as gebruikerid, titel, content, voornaam, achternaam, datum, persoon.id, gebruiker.persoon_id, email FROM post
-				INNER JOIN gebruiker on
+				LEFT JOIN gebruiker on
 				post.gebruiker_id=gebruiker.persoon_id
-				INNER JOIN persoon on
+				LEFT JOIN persoon on
 				gebruiker.persoon_id=persoon.id
 				WHERE post.status =0
 				AND email = '$email'
 				ORDER BY datum DESC";
+		$result = $db->prepare($sql);
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 	}
 	function getUserInfoProfile($email)
 	{
 		global $db;
-		$sql = "SELECT voornaam, achternaam, geboortedatum, adres, postcode, woonplaats, telefoon, mobiel, email, gebruiker.persoon_id, persoon.id, gebruiker.id as gebruikerid FROM gebruiker
+		$sql = "SELECT * FROM gebruiker
 				INNER join persoon on
 				gebruiker.persoon_id = persoon.id
 				where email = '$email'";
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 	}
 	function getWallOwn()
 	{
 		global $db;
 		$sql = "SELECT post.id as postid, gebruiker.id as gebruikerid, titel, content, voornaam, achternaam, datum, persoon.id, gebruiker.persoon_id, email FROM post
-				INNER JOIN gebruiker on
+				LEFT JOIN gebruiker on
 				post.gebruiker_id=gebruiker.persoon_id
-				INNER JOIN persoon on
+				LEFT JOIN persoon on
 				gebruiker.persoon_id=persoon.id
 				WHERE post.status =0
 				AND gebruiker.id = '$_SESSION[user]'
 				ORDER BY datum DESC";
+		$result = $db->prepare($sql);
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 	}
 	function getDeletePostButton()
@@ -258,7 +213,6 @@
 				gebruiker.persoon_id = persoon.id
 				WHERE gebruiker.id = '$_SESSION[user]'";
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 		}
 	function getSinglePost($postid)
@@ -266,15 +220,15 @@
 		global $db;
 		$sql = "SELECT post.id as postid, gebruiker.id as gebruikerid, titel, content, datum, persoon.id, gebruiker.persoon_id
 				FROM post
-				INNER JOIN gebruiker on
+				LEFT JOIN gebruiker on
 				post.gebruiker_id=gebruiker.persoon_id
-				INNER JOIN persoon on
+				LEFT JOIN persoon on
 				gebruiker.persoon_id=persoon.id
 				WHERE post.status =0
 				AND post.id = '$postid'
 				ORDER BY datum DESC";
+		$result = $db->prepare($sql);
 		$result = $db->query($sql);
-		$result->execute();
 		return $result;
 	}
 	function editPost($postid, $contentedit, $titeledit)
@@ -291,119 +245,4 @@
 		$stmt->bindParam(':contentedit', $contentedit, PDO::PARAM_STR);
 		$stmt->execute();
 	}
-
-	function postComment($content, $postid)
-	{
-		global $db;
-		$sql = "INSERT INTO comment (content, post_id, gebruiker_id) 
-		VALUES (:content, :postid, '$_SESSION[user]')";
-
-		$stmt = $db->prepare($sql);
-
-		$stmt->bindParam(':content', $content, PDO::PARAM_STR);
-		$stmt->bindParam(':postid', $postid, PDO::PARAM_STR);
-
-		$stmt->execute();
-	}
-		function deleteComment($commentid)
-	{
-		global $db;
-		$sql = "UPDATE comment
-				SET status='1'
-				WHERE comment.id = '$commentid' ";
-		$stmt = $db->prepare($sql);
-		$stmt = $db->query($sql);
-		$stmt->execute();
-		return $stmt;
-	}
-		function getSingleComment($commentid)
-	{
-		global $db;
-		$sql = "SELECT comment.id as commentid, content, id
-				FROM comment
-				WHERE comment.id = '$commentid'
-				ORDER BY datum DESC";
-		$result = $db->query($sql);
-		$result->execute();
-		return $result;
-	}
-		function editComment($commentid, $commentedit)
-	{
-		
-		global $db;
-
-		$sql= "UPDATE comment
-				SET content=:commentedit
-				WHERE comment.id='$commentid'";
-
-		$stmt = $db->prepare($sql);
-		$stmt->bindParam(':commentedit', $commentedit, PDO::PARAM_STR);
-		$stmt->execute();
-	}
-		function checkAdmin()
-	{
-		global $db;
-		$sql = "SELECT * FROM gebruiker
-				WHERE gebruiker.id='$_SESSION[user]'";
-		$result = $db->query($sql);
-		$result->execute();
-		return $result;
-	}
-		function getAllUsers()
-	{
-		global $db;
-		$sql = "SELECT persoon.id as persoonid, gebruiker.persoon_id, gebruiker.id as gebruikerid, voornaam, achternaam, email		FROM gebruiker
-				INNER join persoon on
-				persoon.id=gebruiker.persoon_id
-				WHERE status = 0";
-		$result = $db->query($sql);
-		$result->execute();
-		return $result;
-	}
-		function getLikes($postid)
-	{
-		global $db;
-		$sql = "SELECT COUNT(*) as count FROM peepzbook.like
-				WHERE post_id = :postid";
-		$stmt = $db->prepare($sql);
-		$stmt->bindParam(':postid', $postid, PDO::PARAM_STR);
-		$stmt->execute();
-		$result = $stmt;
-		return $result;
-	}
-	function likePost($gebruikerid, $postid){
-	global $db;
-		$sql ="INSERT INTO peepzbook.like (gebruiker_id, post_id) VALUES (:gebruikerid, :postid)";
-			$stmt = $db->prepare($sql);
-
-			$stmt->bindParam(':gebruikerid', $gebruikerid, PDO::PARAM_STR);
-			$stmt->bindParam(':postid', $postid, PDO::PARAM_STR);
-
-			$stmt->execute();
-	}
-
-	function dislikePost($gebruikerid, $postid){
-		global $db;
-			$sql ="DELETE FROM peepzbook.like WHERE post_id = :postid  AND gebruiker_id = '$_SESSION[user]'";
-				$stmt = $db->prepare($sql);
-
-				$stmt->bindParam(':postid', $postid, PDO::PARAM_STR);
-
-				$stmt->execute();
-	}
-
-	function checkLike($postid){
-		global $db;
-			$sql ="SELECT * FROM peepzbook.like WHERE gebruiker_id = '$_SESSION[user]'  AND post_id = :postid ";
-				$stmt = $db->prepare($sql);
-				$stmt->bindParam(':postid', $postid, PDO::PARAM_STR);
-				$stmt->execute();
-				$result = $stmt->fetchAll();
-
-				if ($result) {
-					return true;
-				}
-				return false;
-	 }
-
 	?>	

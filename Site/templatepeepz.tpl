@@ -107,9 +107,9 @@
 	<div class="headerhome"></div>
 	<div class="outerhome">
 	    <span class="bannerhome">
-	    <a href="index.php?actie=home"><div class="logo"></div></a>
+	    <a href="index.php?actie=home"><img src="images/logo-reversed.png" class="logo"></a>
+		<a href="friends.php"><img src="images/friends-button.png" class="friends"></a>
 		<a href="index.php?actie=logout"><img src="images/logout-button.png" class="logout"></a>
-		<a href="index.php?actie=admin"><img src="images/admin-button.png" class="adminbutton"></a>
 		</span>
 	</div>
 <!-- START BLOCK : userpromo -->
@@ -118,6 +118,7 @@
 		<img class="promoimg" src="profielfoto/standaard.png"></a>
 		<p>{VOORNAAM} {ACHTERNAAM}</p> 
 		<p>{WOONPLAATS}</p>
+		<a href="index.php?actie=eigenprofiel"><i>Profiel Weergeven!</i></a>
 		</div>
 	</div>
 <!-- END BLOCK : userpromo -->
@@ -132,47 +133,10 @@
 <!-- END BLOCK : wallpost -->
 <!-- START BLOCK : wall -->
 			<div class="post">
-			<h2 class="naam"><a href="index.php?actie=profiel&email={EMAIL}">{POSTVOORNAAM} {POSTACHTERNAAM}</a></h2>
+			<h2 class="naam"><a href="index.php?actie=profiel&email={EMAIL}">{VOORNAAM} {ACHTERNAAM}</a></h2>
 			<h2 class="titel">{TITEL}</h2>
-			<p class="postcontent">{POSTCONTENT}</p>
-<!-- START BLOCK : comments -->
-			<div class="comment">
-			<p>{COMMENTVOORNAAM} {COMMENTACHTERNAAM}</p>
-			<p>{COMMENTCONTENT}</p>
-			<p class="commentdatum">Geplaatst op: {COMMENTDATUM}</p>
-<!-- START BLOCK : delcomment -->
-			<p><a href="index.php?actie=deletecomment&id={COMMENTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editcomment&id={COMMENTID}"><img class="editimg" src="images/editbutton.png"></a></p>
-<!-- END BLOCK : delcomment -->
-			</div>
-<!-- END BLOCK : comments -->
-				<div class="addcomment">
-					<form method="post" action="index.php?actie=postcomment&id={POSTID}">
-					<p>
-						<input class="addcomment" type="text" name="addcomment"/>
-						<input name="commentknop" class="commentknop" type="submit" value="Comment!"/>
-					</p>
-					</form>
-				</div>
-<!-- START BLOCK : likes-->
-			<p class="like">{COUNT} Like(s)</p>
-<!-- END BLOCK : likes -->
-<!-- START BLOCK : liken -->
-			<form class="liken" action="index.php?actie=wall&postid={POSTID}" method="post">
-			<input type="submit" name="like" class="likenknop" value="Vind ik leuk!">
-			</form>
-<!-- END BLOCK : liken -->
-<!-- START BLOCK : disliken -->
-			<form class="disliken" action="index.php?actie=wall&postid={POSTID}" method="post">
-			<input type="submit" name="dislike" class="likenknop" value="Vind ik niet meer leuk!">
-			</form>
-<!-- END BLOCK : disliken -->
-
-			<p class="postdatum">Geplaatst op: {POSTDATUM}</p>
-<!-- START BLOCK : deledit -->
-			<p><a href="index.php?actie=verwijderen&id={POSTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editpost&id={POSTID}"><img class="editimg" src="images/editbutton.png"></a></p>
-<!-- END BLOCK : deledit -->
+			<p class="postcontent">{CONTENT}</p>
+			<p class="postdatum">Geplaatst op: {DATUM}</p>
 			</div>
 <!-- END BLOCK : wall -->
 		</div>
@@ -240,36 +204,22 @@
 <!-- END BLOCK : edit -->
 <!-- START BLOCK : profielwall -->
 			<div class="profielpost">
-			<h2 class="naam"><a href="index.php?actie=profiel&email={EMAIL}">{VOORNAAM} {ACHTERNAAM}</a></h2>
+			<h2 class="naam"><a href="index.php?actie=profiel">{VOORNAAM} {ACHTERNAAM}</a></h2>
 			<h2 class="titel">{TITEL}</h2>
 			<p class="postcontent">{CONTENT}</p>
 			<p class="postdatum">Geplaatst op: {DATUM}</p>
-<!-- START BLOCK : profielcomments -->
-			<div class="comment">
-			<p>{COMMENTVOORNAAM} {COMMENTACHTERNAAM}</p>
-			<p>{COMMENTCONTENT}</p>
-			<p class="commentdatum">Geplaatst op: {COMMENTDATUM}</p>
-<!-- START BLOCK : profieldelcomment -->
-			<p><a href="index.php?actie=deletecomment&id={COMMENTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editcomment&id={COMMENTID}"><img class="editimg" src="images/editbutton.png"></a></p>
-<!-- END BLOCK : profieldelcomment -->
-			</div>
-<!-- END BLOCK : profielcomments -->
-				<div class="addcomment">
-					<form method="post" action="index.php?actie=postcomment&id={POSTID}">
-					<p>
-						<input class="addcomment" type="text" name="addcomment"/>
-						<input name="commentknop" class="commentknop" type="submit" value="Comment!"/>
-					</p>
-					</form>
-				</div>
-			<p class="postdatum">Geplaatst op: {POSTDATUM}</p>
-<!-- START BLOCK : profieldeledit -->
-			<p><a href="index.php?actie=verwijderen&id={POSTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editpost&id={POSTID}"><img class="editimg" src="images/editbutton.png"></a></p>
-<!-- END BLOCK : profieldeledit -->
 			</div>
 <!-- END BLOCK : profielwall -->
+<!-- START BLOCK : eigenwall -->
+			<div class="profielpost">
+			<h2 class="naam"><a href="index.php?actie=profiel">{VOORNAAM} {ACHTERNAAM}</a></h2>
+			<h2 class="titel">{TITEL}</h2>
+			<p class="postcontent">{CONTENT}</p>
+			<p><a href="index.php?actie=verwijderen&id={POSTID}"><img class="delimg" src="images/delbutton.png"> </a></p>
+			<p><a href="index.php?actie=editpost&id={POSTID}"><img class="editimg" src="images/editbutton.png"> </a></p>
+			<p class="postdatum">Geplaatst op: {DATUM}</p>
+			</div>
+<!-- END BLOCK : eigenwall -->
 <!-- START BLOCK : verwijderen -->
 	<h1>Weet u zeker dat u dit wilt verwijderen?</h1>
 	<form action="index.php?actie=verwijderen" method="POST">
@@ -298,59 +248,5 @@
 	</form>
 </div>
 <!-- END BLOCK : editpost -->
-<!-- START BLOCK : editcomment -->
-<div class="editcomment">
-<form method="post" action="index.php?actie=editcommentcheck&id={COMMENTID}">
-	<label class="commentedit">Content: </label>
-	<input class="commentedit" name="commentedit" type="text"  placeholder="{CONTENT}" />
-	<input name="editknop" class="editknop" type="submit" value="Bewerken!"/>
-	</form>
-</div>
-<!-- END BLOCK : editcomment -->
-<!-- START BLOCK : admin -->
-<!-- START BLOCK : adminposttext -->
-<p class="adminposts">Edit or Deactivate Post's / Comment's</p>
-<p class="adminusers">Deactiveer gebruikers</p>
-<!-- END BLOCK : adminposttext -->
-		<div class="adminwallpost">
-<!-- START BLOCK : adminwall -->
-			<div class="adminwall">
-			<div class="post">
-			<h2 class="naam"><a href="index.php?actie=profiel&email={EMAIL}">{POSTVOORNAAM} {POSTACHTERNAAM}</a></h2>
-			<h2 class="titel">{TITEL}</h2>
-			<p class="postcontent">{POSTCONTENT}</p>
-<!-- START BLOCK : admincomments -->
-			<div class="comment">
-			<p>{COMMENTVOORNAAM} {COMMENTACHTERNAAM}</p>
-			<p>{COMMENTCONTENT}</p>
-			<p class="commentdatum">Geplaatst op: {COMMENTDATUM}</p>
-<!-- START BLOCK : admindelcomment -->
-			<p><a href="index.php?actie=deletecomment&id={COMMENTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editcomment&id={COMMENTID}"><img class="editimg" src="images/editbutton.png"></a></p>
-<!-- END BLOCK : admindelcomment -->
-			</div>
-<!-- END BLOCK : admincomments -->
-			<p class="postdatum">Geplaatst op: {POSTDATUM}</p>
-<!-- START BLOCK : admindeledit -->
-			<p><a href="index.php?actie=verwijderen&id={POSTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editpost&id={POSTID}"><img class="editimg" src="images/editbutton.png"></a></p>
-<!-- END BLOCK : admindeledit -->
-			</div>
-			</div>
-<!-- END BLOCK : adminwall -->
-			</div>
-<!-- START BLOCK : admindeluser -->
-<div class="admindeluser">
-<!-- START BLOCK : adminuser -->
-	<div class="deluser>">
-		<p>{VOORNAAM} {ACHTERNAAM}</p>
-		<p>{EMAIL}</p>
-<!-- START BLOCK : admindellink -->
-		<p><a href="index.php?actie=deluser&id={GEBRUIKERID}"><img class="delimg" src="images/delbutton.png"></a></p>
-<!-- END BLOCK : admindellink -->
-	</div>
-<!-- END BLOCK : adminuser -->
-</div>
-<!-- END BLOCK : admindeluser -->
-<!-- END BLOCK : admin -->
+
 

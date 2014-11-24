@@ -41,24 +41,19 @@ body.home{
 	margin-left: 150px;
 	background-color:rgba(204,209,156,0.3);
 }
-img.logo{
+div.logo{
 	width: 30px;
 	height: 30px;
 	position: fixed;
 	left: 20px;
 	top: 5px;
+	background-image:url("images/logo-reversed.png");
+	background-size: 30px;
 }
 p.session{
 	position: fixed;
 	left: 70px;
 	top : -5px;
-}
-img.friends{
-	width: 30px;
-	height: 30px;
-	position: fixed;
-	left: 750px;
-	top: 5px;
 }
 img.logout{
 	width: 30px;
@@ -171,20 +166,6 @@ input.wwreg{
 	right: 250px;
 	background-color: #e9eaed;
 }
-label.regrep{
-	position: fixed;
-	top: 350px;
-	right: 465px;
-	font-family: Comic Sans MS;
-	font-size: 16px;
-	color: #025013;
-}
-input.regrep{
-	position: fixed;
-	top: 350px;
-	right: 250px;
-	background-color: #e9eaed;
-}
 input.register{
 	position: fixed;
 	top: 400px;
@@ -208,6 +189,7 @@ input.register{
 	padding-right: 5px;
 	padding-bottom: 5px;
 	border: 2px solid black;
+	border-radius: 20px;
 }
 .userpromocont{
 	margin-left: 10px;
@@ -216,23 +198,25 @@ input.register{
 img.promoimg{
 	width: 100px;
 	height: 100px;
-	margin-left: 12px;
-	margin-top: 5px;
+	margin-left: 3px;
 	border: 2px solid black;
+	border-radius: 50px;
 }
 .userpromocont p{
 	margin-top: 2px;
 }
 .wall{
-	width: 800px;
+	width: 1000px;
 	height: auto;
 	margin-top: -50px;
 	border: 2px solid black;
+	border-radius: 20px;
 	margin-left: 200px;
 	padding-left: 10px;
 }
 .post{
 	border: 2px outset black;
+	border-radius: 20px;
 	margin-left: 10px;
 	margin-right: 20px;
 	margin-bottom: 20px;
@@ -258,13 +242,452 @@ img.promoimg{
 	text-align: center;
 	background-color:rgba(0,0,0,0.2);
 }
-input.postveld{
+textarea.postveld{
 	margin-top: 20px;
 	margin-left: 10px;
-	height: 40px;
-	width: 500px;
+	height: 120px;
+	width: 700px;
 	font-family: Comic Sans MS;
 	font-size: 15px;
 	color: gray;
 	padding-left: 5px;
+}
+textarea.postveld:focus{
+	background-color: #A9E8C9;
+	color: black;
+}
+p.sessie{
+	margin-top: 50px;
+}
+label.voornaam{
+	position: fixed;
+	top: 200px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.voornaam{
+	position: fixed;
+	top: 200px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.achternaam{
+	position: fixed;
+	top: 250px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.achternaam{
+	position: fixed;
+	top: 250px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.gbdatum{
+	position: fixed;
+	top: 300px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.gbdatum{
+	position: fixed;
+	top: 300px;
+	right: 250px;
+	width: 167px;
+	background-color: #e9eaed;
+}
+label.adres{
+	position: fixed;
+	top: 350px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.adres{
+	position: fixed;
+	top: 350px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.postcode{
+	position: fixed;
+	top: 400px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.postcode{
+	position: fixed;
+	top: 400px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.woonp{
+	position: fixed;
+	top: 450px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.woonp{
+	position: fixed;
+	top: 450px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.mobiel{
+	position: fixed;
+	top: 500px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.mobiel{
+	position: fixed;
+	top: 500px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+label.tel{
+	position: fixed;
+	top: 550px;
+	right: 480px;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.tel{
+	position: fixed;
+	top: 550px;
+	right: 250px;
+	background-color: #e9eaed;
+}
+input.register2{
+	position: fixed;
+	top: 600px;
+	right: 295px;
+	font-size: 12px;
+	font-family: Comic Sans MS;
+}
+input.titelveld{
+	margin-top: 20px;
+	margin-left: 10px;
+	height: 40px;
+	width: 700px;
+	font-family: Comic Sans MS;
+	font-size: 15px;
+	color: gray;
+	padding-left: 5px;
+}
+input.titelveld:focus{
+	background-color: #A9E8C9;
+	color: black;
+}
+input.postknop{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	font-family: Comic Sans MS;
+	font-size: 15px;
+	color: gray;
+	display: block;
+}
+img.userimage{
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+	float: left;
+	margin-right: 10px;
+}
+div.profielinhoud{
+	border: 1px solid black;
+	border-radius: 20px;
+	margin-left: 250px;
+	padding-left: 20px;
+	width: 792px;
+}
+div.editinhoud{
+	border: 1px solid black;
+	margin-left: 250px;
+	padding-left: 20px;
+	height: 380px;
+}
+label.vooredit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.vooredit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+label.achteredit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.achteredit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+label.gbedit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.gbedit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+	width: 196px;
+}
+label.adresedit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.adresedit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+label.postedit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.postedit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+label.woonedit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.woonedit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+label.mobedit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.mobedit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+label.teledit{
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	color: #025013;
+}
+input.teledit{
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+div.editinhoud input{
+	float: right;
+	margin-right: 700px;
+}
+input.editknop{
+	font-size: 12px;
+	font-family: Comic Sans MS;
+}
+img.delimg{
+	display: block;
+	float: left;
+	margin-right: 10px;
+	width: 15px;
+	height: 15px;
+}
+img.editimg{
+	width: 15px;
+	height: 15px;
+}
+.profielpost{
+	border: 2px outset black;
+	border-radius: 20px;
+	margin-left: 250px;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	font-family: Comic Sans MS;
+	background-color:rgba(121,242,129,0.4);
+	width: 800px;
+}
+.profielpost h2.naam{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+.profielpost h2.titel{
+	margin-top: 5px;
+	margin-bottom: -10px;
+	font-size: 17px;
+}
+.profielpost p.postdatum{
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: -10px;
+	margin-bottom: 0px;
+	text-align: center;
+	background-color:rgba(0,0,0,0.2);
+}
+div.editpost{
+	border: 1px solid black;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-left: 20px;
+	margin-top: 10px;
+}
+label.titeledit{
+	padding-top: 10px;
+	font-family: Comic Sans MS;
+	font-size: 14px;
+}
+input.titeledit{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+	display: block;
+}
+label.contentedit{
+	padding-bottom: 100px;
+	font-family: Comic Sans MS;
+	font-size: 14px;
+}
+textarea.contentedit{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+}
+input.editknop{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+div.comment{
+	background-color:rgba(0,0,0,0.2);
+	border: 1px solid black;
+	border-radius: 30px;
+	font-size: 13px;
+	padding-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+div.addcomment{
+	background-color:rgba(0,0,0,0.2);
+	border: 1px solid black;
+	border-radius: 30px;
+	font-size: 2pt;
+	padding-left: 10px;
+	margin-right: 40px;
+	margin-left: 30px;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	}
+p.commentdatum{
+	font-size: 11px;
+	background-color:rgba(0,0,0,0.2);
+	margin-left: -10px;
+	text-align: center;
+}
+div.editcomment{
+	border: 1px solid black;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-left: 20px;
+	margin-top: 10px;
+}
+label.commentedit{
+	padding-top: 10px;
+	font-family: Comic Sans MS;
+	font-size: 14px;
+}
+input.commentedit{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Comic Sans MS;
+	font-size: 14px;
+	background-color: #D5DBEB;
+	display: block;
+}
+p.commentnaam
+	{
+	background-color:rgba(0,0,0,0.2);
+	margin-left: -10px;
+	padding-left: 10px;
+	margin-top: 20px;
+	}
+img.adminbutton{
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	left: 740px;
+	top: 5px;
+}
+div.adminwall{
+	width: 600px;
+}
+p.adminposts{
+	margin-left: 20px;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	margin-top: -30px;
+}
+p.adminusers{
+	right: 150px;	
+	position: fixed;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	margin-top: -30px;
+	float: right;
+}
+div.admindeluser{
+	float: right;
+	display: block;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin: 10px;
+	padding: 5px;
+	}
+div.adminwallpost{
+	float: left;
+}
+input.addcomment{
+	width: 100px;
+	background-color:rgba(255,255,255,0.2);
+	transition: 1s ease-out all;
+	margin-right: 10px;
+}
+input.addcomment:focus{
+	width: 200px;
+	background-color:rgba(255,255,255,0.5);
+	transition: 1s ease all;
 }

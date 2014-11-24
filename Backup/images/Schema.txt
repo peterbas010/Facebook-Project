@@ -1,0 +1,31 @@
+Bezoeker:
+
+Registreren
+
+
+User:
+
+Inloggen
+Uitloggen
+
+Zelf Posten
+Eigen Post verwijderen
+Eigen Post bewerken
+
+Post's van vrienden bekijken
+
+Eigen info bewerken
+- Woonplaats - School - Werk - Profielfoto etc.
+
+Liken
+Reageren
+Reacties liken
+Reageren op reacties
+Reacties op Reacties liken
+
+
+Admin:
+Alle Post's verwijderen
+Alle Post's bewerken
+Profielen bewerken
+Profielen verwijderen
