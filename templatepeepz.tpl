@@ -345,10 +345,12 @@
 <div class="admindeluser">
 <!-- START BLOCK : adminuser -->
 	<div class="deluser>">
+		<p>Status: {STATUS}</p>
 		<p>{VOORNAAM} {ACHTERNAAM}</p>
 		<p>{EMAIL}</p>
 <!-- START BLOCK : admindellink -->
-		<p><a href="index.php?actie=deluser&id={GEBRUIKERID}"><img class="delimg" src="images/delbutton.png"></a></p>
+		<p class="admindellink"><a href="index.php?actie=activateuser&id={GEBRUIKERID}"><img class="activateimg" src="images/activatebutton.png"></a>
+		<a href="index.php?actie=deluser&id={GEBRUIKERID}"><img class="delimg" src="images/delbutton.png"></a></p>
 <!-- END BLOCK : admindellink -->
 	</div>
 <!-- END BLOCK : adminuser -->

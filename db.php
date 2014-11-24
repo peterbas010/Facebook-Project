@@ -209,6 +209,19 @@
 		$stmt->execute();
 		return $stmt;
 	}
+
+	function activateUser($userid)
+	{
+		global $db;
+		$sql = "UPDATE gebruiker
+		SET status='0'
+		WHERE gebruiker.id = '$userid' ";
+		$stmt = $db->prepare($sql);
+		$stmt = $db->query($sql);
+		$stmt->execute();
+		return $stmt;
+	}
+
 	function getWallProfile($email)
 	{
 		global $db;
@@ -352,10 +365,10 @@
 		function getAllUsers()
 	{
 		global $db;
-		$sql = "SELECT persoon.id as persoonid, gebruiker.persoon_id, gebruiker.id as gebruikerid, voornaam, achternaam, email		FROM gebruiker
+		$sql = "SELECT persoon.id as persoonid, gebruiker.persoon_id, gebruiker.id as gebruikerid, voornaam, achternaam, email, status	
+				FROM gebruiker
 				INNER join persoon on
-				persoon.id=gebruiker.persoon_id
-				WHERE status = 0";
+				persoon.id=gebruiker.persoon_id";
 		$result = $db->query($sql);
 		$result->execute();
 		return $result;
@@ -405,5 +418,6 @@
 				}
 				return false;
 	 }
+
 
 	?>	

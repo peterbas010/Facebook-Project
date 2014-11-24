@@ -87,6 +87,15 @@
 					$tpl->assign("VOORNAAM", $row['voornaam']);
 					$tpl->assign("ACHTERNAAM", $row['achternaam']);
 					$tpl->assign("EMAIL", $row['email']);
+					if ($row['status'] == '0')
+						{
+						$row['status'] = 'Actief';
+						}
+					elseif ($row['status'] == '1')
+						{
+						$row['status'] = 'Inactief';
+						}
+					$tpl->assign("STATUS", $row['status']);
 					$tpl->newBlock("admindellink");
 					$tpl->assign("GEBRUIKERID", $row['gebruikerid']);					
 					}
@@ -408,6 +417,22 @@
 		}
 
 	break;
+
+	case 'activateuser':
+
+		if(!isset($_SESSION['user'])) 
+		{
+		 header("Location:index.php");
+		}
+		else
+		{
+		$userid = $_GET['id'];
+		activateUser($userid);
+		header("Location:index.php?actie=admin");
+		}
+
+	break;
+
 		case 'postcomment':
 
 		if(!isset($_SESSION['user'])) 

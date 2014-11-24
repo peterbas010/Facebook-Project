@@ -518,6 +518,13 @@ img.delimg{
 	width: 15px;
 	height: 15px;
 }
+img.activateimg{
+	display: block;
+	float: left;
+	margin-right: 10px;
+	width: 15px;
+	height: 15px;
+}
 img.editimg{
 	width: 15px;
 	height: 15px;
@@ -679,7 +686,12 @@ div.admindeluser{
 	margin-top: 10px;
 	padding: 5px;
 	margin-right: 200px;
+	width: 200px;
+	text-align: center;
 	}
+p.admindellink{
+	margin-left: 75px;
+}
 div.adminwallpost{
 	float: left;
 }
