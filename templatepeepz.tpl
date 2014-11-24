@@ -109,7 +109,9 @@
 	    <span class="bannerhome">
 	    <a href="index.php?actie=home"><div class="logo"></div></a>
 		<a href="index.php?actie=logout"><img src="images/logout-button.png" class="logout"></a>
+<!-- START BLOCK : adminbutton -->
 		<a href="index.php?actie=admin"><img src="images/admin-button.png" class="adminbutton"></a>
+<!-- END BLOCK : adminbutton -->
 		</span>
 	</div>
 <!-- START BLOCK : userpromo -->

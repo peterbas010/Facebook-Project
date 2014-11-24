@@ -182,6 +182,14 @@
 					$tpl->assign("COMMENTID", $row['commentid']);
 				}
 			}
+			$result = checkAdmin();
+			foreach ($result as $row)
+				{
+				if ($row['groep_id'] == '1')
+				{
+				$tpl->newBlock("adminbutton");
+				}
+			}
 			}
 		}
 	break;
@@ -358,7 +366,15 @@
 					$tpl->newBlock("likes");
 					$tpl->assign("COUNT", $row['count']);
 				}
+			$result = checkAdmin();
+			foreach ($result as $row)
+				{
+				if ($row['groep_id'] == '1')
+				{
+				$tpl->newBlock("adminbutton");
+				}
 			}
+		}
 
 		}
 	break;
