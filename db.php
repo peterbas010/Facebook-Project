@@ -332,7 +332,7 @@
 		function getSingleComment($commentid)
 	{
 		global $db;
-		$sql = "SELECT comment.id as commentid, content, id
+		$sql = "SELECT comment.id as commentid, content, id, gebruiker_id
 				FROM comment
 				WHERE comment.id = '$commentid'
 				ORDER BY datum DESC";

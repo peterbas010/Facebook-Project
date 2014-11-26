@@ -480,6 +480,10 @@
 			$tpl->newBlock("editcomment");
 			$tpl->assign("CONTENT", $row['content']);
 			$tpl->assign("COMMENTID", $row['id']);
+			if ($row['gebruiker_id'] !== $_SESSION['user'])
+				{
+				header('Location:index.php?actie=wall');
+				}
 			}
 		}
 
