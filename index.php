@@ -322,6 +322,7 @@
 			$tpl->assign("VOORNAAM", $row['voornaam']);
 			$tpl->assign("ACHTERNAAM", $row['achternaam']);
 			$tpl->assign("WOONPLAATS", $row['woonplaats']);
+			$tpl->assign("EMAIL", $row['email']);
 			$GebruikerID = $row['id'];
 			}
 		$result = getWall();

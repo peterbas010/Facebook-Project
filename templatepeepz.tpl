@@ -120,6 +120,7 @@
 		<img class="promoimg" src="profielfoto/standaard.png"></a>
 		<p>{VOORNAAM} {ACHTERNAAM}</p> 
 		<p>{WOONPLAATS}</p>
+		<p><a href="index.php?actie=profiel&email={EMAIL}">Profiel Weergeven</a></p>
 		</div>
 	</div>
 <!-- END BLOCK : userpromo -->
