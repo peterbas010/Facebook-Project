@@ -472,7 +472,16 @@
 		else
 		{
 		$commentid = $_GET['id'];
-		deleteComment($commentid);
+		$result = getSingleComment($commentid);
+		foreach ($result as $row)
+			{
+			if ($row['gebruikerid'] == $_SESSION['user'])
+				{
+				$commentid = $_GET['id'];
+				deleteComment($commentid);
+				header("Location:index.php?actie=wall");
+				}
+			}
 		header("Location:index.php?actie=wall");
 		}
 
@@ -494,7 +503,7 @@
 			$tpl->newBlock("editcomment");
 			$tpl->assign("CONTENT", $row['content']);
 			$tpl->assign("COMMENTID", $row['id']);
-			if ($row['gebruiker_id'] !== $_SESSION['user'])
+			if ($row['gebruikerid'] !== $_SESSION['user'])
 				{
 				header('Location:index.php?actie=wall');
 				}
