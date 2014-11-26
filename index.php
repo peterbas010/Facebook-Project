@@ -224,6 +224,10 @@
 			$tpl->assign("PERSOONID", $row['id']);
 			$tpl->assign("POSTID", $row['postid']);
 			$postid = $row['postid'];
+			if ($row['gebruikerid'] !== $_SESSION['user'])
+				{
+				header('Location:index.php?actie=wall');
+				}
 			}
 		}
 
