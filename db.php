@@ -412,11 +412,7 @@
 				$stmt->bindParam(':postid', $postid, PDO::PARAM_STR);
 				$stmt->execute();
 				$result = $stmt->fetchAll();
-
-				if ($result) {
-					return true;
-				}
-				return false;
+				return $result;
 	 }
 
 
