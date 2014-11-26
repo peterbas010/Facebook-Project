@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" href="images/logo.ico">
 	<meta charset="UTF-8">
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<title>P-Book</title>
+	<title>PeepzBook</title>
 </head>
 	<body class="index">
 		<div class="headerindex"></div>
