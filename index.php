@@ -398,7 +398,16 @@
 		else
 		{
 		$postid = $_GET['id'];
-		deletePost($postid);
+		$result = getSinglePost($postid);
+		foreach ($result as $row)
+			{
+			if ($row['gebruikerid'] == $_SESSION['user'])
+				{
+				$postid = $_GET['id'];
+				deletePost($postid);
+				header("Location:index.php?actie=wall");
+				}
+			}
 		header("Location:index.php?actie=wall");
 		}
 
