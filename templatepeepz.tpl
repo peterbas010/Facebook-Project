@@ -15,7 +15,7 @@
 		    	<form method="post" action="index.php?actie=login">
 				  <p>
 				   <label class="naam">Email</label>
-				   <input type="text" name="name" class="naam" REQUIRED />
+				   <input type="email" name="name" class="naam" REQUIRED />
 				  </p>
 				  <p>
 				   <label class="wachtwoord">Wacthwoord</label>
@@ -37,7 +37,7 @@
 			<form method="post" action="index.php?actie=register">
 				  <p>
 				   <label class="naamreg">Email</label>
-				   <input class="naamreg" type="text" name="naamreg" REQUIRED />
+				   <input class="naamreg" type="email" name="naamreg" REQUIRED />
 				  </p>
 				  <p>
 				   <label class="wwreg">Wacthwoord</label>
@@ -75,11 +75,11 @@
 				  </p>
 				  <p>
 				   <label class="mobiel">Mobiel</label>
-				   <input class="mobiel" type="text" name="mobiel"/>
+				   <input class="mobiel" type="number" name="mobiel"/>
 				  </p>
 				  <p>
 				   <label class="tel">Telefoon</label>
-				   <input class="tel" type="text" name="telefoon"/>
+				   <input class="tel" type="number" name="telefoon"/>
 				  </p>
 				  <input type="hidden" name="naamreg" value="{EMAIL}">
 				  <input type="hidden" name="wwreg" value="{PASSWORD}">
