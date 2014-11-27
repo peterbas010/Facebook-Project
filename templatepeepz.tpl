@@ -15,11 +15,11 @@
 		    	<form method="post" action="index.php?actie=login">
 				  <p>
 				   <label class="naam">Email</label>
-				   <input type="text" name="name" class="naam" />
+				   <input type="text" name="name" class="naam" REQUIRED />
 				  </p>
 				  <p>
 				   <label class="wachtwoord">Wacthwoord</label>
-				   <input type="password" name="password" class="wachtwoord" />
+				   <input type="password" name="password" class="wachtwoord" REQUIRED />
 				  </p>
 				  </p>
 					<input name="login" type="submit" value="Lets Go!" class="aanmelden" />
@@ -37,11 +37,11 @@
 			<form method="post" action="index.php?actie=register">
 				  <p>
 				   <label class="naamreg">Email</label>
-				   <input class="naamreg" type="text" name="naamreg" />
+				   <input class="naamreg" type="text" name="naamreg" REQUIRED />
 				  </p>
 				  <p>
 				   <label class="wwreg">Wacthwoord</label>
-				   <input class="wwreg" type="password" name="wwreg" />
+				   <input class="wwreg" type="password" name="wwreg" REQUIRED />
 				  </p>
 					<input name="register" class="register" type="submit" value="Registreren"/>
 				  </p>
@@ -51,27 +51,27 @@
 			<form method="post" action="index.php?actie=register">
 				  <p>
 				   <label class="voornaam">Voornaam</label>
-				   <input class="voornaam" type="text" name="voornaam" />
+				   <input class="voornaam" type="text" name="voornaam" REQUIRED />
 				  </p>
 				  <p>
 				   <label class="achternaam">Achternaam</label>
-				   <input class="achternaam" type="text" name="achternaam" />
+				   <input class="achternaam" type="text" name="achternaam" REQUIRED />
 				  </p>
 				  <p>
 				   <label class="gbdatum">Geboortedatum</label>
-				   <input class="gbdatum" type="date" name="geboortedatum"/>
+				   <input class="gbdatum" type="date" name="geboortedatum" REQUIRED/>
 				  </p>
 				  <p>
 				   <label class="adres">Adres</label>
-				   <input class="adres" type="text" name="adres"/>
+				   <input class="adres" type="text" name="adres" REQUIRED/>
 				  </p>
 				  <p>
 				   <label class="postcode">Postcode</label>
-				   <input class="postcode" type="text" name="postcode"/>
+				   <input class="postcode" type="text" name="postcode" REQUIRED/>
 				  </p>
 				  <p>
 				   <label class="woonp">Woonplaats</label>
-				   <input class="woonp" type="text" name="woonplaats"/>
+				   <input class="woonp" type="text" name="woonplaats" REQUIRED/>
 				  </p>
 				  <p>
 				   <label class="mobiel">Mobiel</label>
@@ -294,9 +294,9 @@
 <div class="editpost">
 <form method="post" action="index.php?actie=editpostcheck&id={POSTID}">
 	<label class="titeledit">Titel:</label>
-	<input class="titeledit" name="titeledit" type="text"  placeholder="{TITEL}" />
+	<input class="titeledit" name="titeledit" type="text"  value="{TITEL}" />
 	<label class="contentedit">Content:</label>
-	<textarea class="contentedit" name="contentedit" cols="40" rows="5" placeholder="{CONTENT}"></textarea>
+	<textarea class="contentedit" name="contentedit" cols="40" rows="5">{CONTENT}</textarea>
 	<input name="editknop" class="editknop" type="submit" value="Bewerken!"/>
 	</form>
 </div>
@@ -305,7 +305,7 @@
 <div class="editcomment">
 <form method="post" action="index.php?actie=editcommentcheck&id={COMMENTID}">
 	<label class="commentedit">Content: </label>
-	<input class="commentedit" name="commentedit" type="text"  placeholder="{CONTENT}" />
+	<input class="commentedit" name="commentedit" type="text"  value="{CONTENT}" />
 	<input name="editknop" class="editknop" type="submit" value="Bewerken!"/>
 	</form>
 </div>

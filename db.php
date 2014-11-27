@@ -43,6 +43,7 @@
 		$stmt = $db->prepare($sql);
 
 		$stmt->bindParam(':email', $email, PDO::PARAM_STR);
+		$password = hash('sha512', $password);
 		$stmt->bindParam(':password', $password, PDO::PARAM_STR);
 		$stmt->bindParam(':persoon_id', $newPersonID, PDO::PARAM_STR);
 
@@ -58,6 +59,7 @@
 			WHERE email= :email 
 			AND password= :password
 			AND status=0");
+		$password = hash('sha512', $password);
 		$result->bindParam(':email', $email, PDO::PARAM_STR);
 		$result->bindParam(':password', $password, PDO::PARAM_STR);
 		$result->execute();
