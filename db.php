@@ -90,7 +90,6 @@
 				ORDER BY post.datum DESC";
 		$result = $db->query($sql);
 		$result->execute();
-
 		return $result;
 	}
 
@@ -139,8 +138,8 @@
 
 		$stmt = $db->prepare($sql);
 
-		$stmt->bindParam(':titel', $titel, PDO::PARAM_STR);
-		$stmt->bindParam(':content', $content, PDO::PARAM_STR);
+		$stmt->bindParam(':titel', mysql_real_escape_string($titel), PDO::PARAM_STR);
+		$stmt->bindParam(':content', mysql_real_escape_string($content), PDO::PARAM_STR);
 		$stmt->bindParam(':poster_id', $posterID, PDO::PARAM_STR);
 
 		$stmt->execute();

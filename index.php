@@ -336,7 +336,7 @@
 			$tpl->assign("POSTVOORNAAM", $row['postvoornaam']);
 			$tpl->assign("POSTACHTERNAAM", $row['postachternaam']);
 			$tpl->assign("TITEL", $row['titel']);
-			$tpl->assign("POSTCONTENT", $row['postcontent']);
+			$tpl->assign("POSTCONTENT", trim(nl2br($row['postcontent'])));
 			$tpl->assign("POSTDATUM", $row['postdatum']);
 			$tpl->assign("PERSOONID", $row['persoonidpost']);
 			$tpl->assign("POSTID", $row['postid']);
