@@ -328,15 +328,13 @@
 			<p>{COMMENTCONTENT}</p>
 			<p class="commentdatum">Geplaatst op: {COMMENTDATUM}</p>
 <!-- START BLOCK : admindelcomment -->
-			<p><a href="index.php?actie=deletecomment&id={COMMENTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editcomment&id={COMMENTID}"><img class="editimg" src="images/editbutton.png"></a></p>
+			<p class="deletecommentadmin"><a href="index.php?actie=admindeletecomment&id={COMMENTID}"><img class="delimg" src="images/delbutton.png"></a></p>
 <!-- END BLOCK : admindelcomment -->
 			</div>
 <!-- END BLOCK : admincomments -->
 			<p class="postdatum">Geplaatst op: {POSTDATUM}</p>
 <!-- START BLOCK : admindeledit -->
-			<p><a href="index.php?actie=verwijderen&id={POSTID}"><img class="delimg" src="images/delbutton.png"></a></p>
-			<p><a href="index.php?actie=editpost&id={POSTID}"><img class="editimg" src="images/editbutton.png"></a></p>
+			<p class="deletepostadmin"><a href="index.php?actie=adminverwijderen&id={POSTID}"><img class="delimg" src="images/delbutton.png"></a></p>
 <!-- END BLOCK : admindeledit -->
 			</div>
 			</div>

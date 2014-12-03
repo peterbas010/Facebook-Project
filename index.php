@@ -417,6 +417,21 @@
 
 	break;
 
+	case 'adminverwijderen':
+
+		if(!isset($_SESSION['user'])) 
+		{
+		 header("Location:index.php");
+		}
+		else
+		{
+		$postid = $_GET['id'];
+		deletePost($postid);
+		header("Location:index.php?actie=admin");
+		}
+
+	break;
+
 	case 'deluser':
 
 		if(!isset($_SESSION['user'])) 
@@ -483,6 +498,21 @@
 				}
 			}
 		header("Location:index.php?actie=wall");
+		}
+
+	break;
+
+		case 'admindeletecomment':
+
+		if(!isset($_SESSION['user'])) 
+		{
+		 header("Location:index.php");
+		}
+		else
+		{
+		$commentid = $_GET['id'];
+		deleteComment($commentid);
+		header("Location:index.php?actie=admin");
 		}
 
 	break;
